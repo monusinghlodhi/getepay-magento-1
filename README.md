@@ -1,5 +1,5 @@
 # GetePay Magento 1
-## GetePay Magento plugin v1.0.8 for Magento v1.9.4.x
+## GetePay Magento plugin v1.0.1 for Magento v1.9.4.x
 
 This is the GetePay plugin for Magento 1. Please feel free to contact the GetePay support team at support@getepay.in should you require any assistance.
 
