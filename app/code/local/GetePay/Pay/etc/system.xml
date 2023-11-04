@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2023 GetePay
+ *
+ * Author: GetePay
+ * 
+ * Released under the GNU General Public License
+ */
+-->
+<config>
+	<sections>
+		<payment>
+			<groups>
+				<pay_functions plugin="pay">
+					<label>GetePay</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<heading_1>
+							<label>GetePay Plugin Settings</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>15</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</heading_1>
+						<active>
+							<label>Enabled</label>
+							<comment>Select "Yes" to Enable your GetePay Plugin</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title>
+							<label>Payment Method Title</label>
+							<comment>Type the "Title" you wish Users to see when selecting GetePay as their Payment Method</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<validate>required-entry</validate>
+						</title>
+						<mode>
+							<label>Live Mode?</label>
+							<comment>Select "Yes" to enable Live Transactions or "No" to enable Test Transactions</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</mode>
+						<heading_2>
+							<label>GetePay Merchant Settings</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>45</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</heading_2>
+						<req_url translate="label">
+                            <label>Live Request Url</label>
+							<comment>Type the "Live Getepay Request URL" allocated to you by Getepay</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<validate>required-entry</validate>
+							<depends><mode><value>1</value></mode></depends>
+                        </req_url>
+						<test_req_url translate="label">
+                            <label>Test Request Url</label>
+							<comment>Type the "Test Getepay Request URL" allocated to you by Getepay</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<validate>required-entry</validate>
+							<depends><mode><value>0</value></mode></depends>
+                        </test_req_url>
+                        <getepay_mid translate="label">
+                            <label>Live GetePay MID</label>
+							<comment>Type the "Live Getepay MID" allocated to you by Getepay</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>55</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<validate>required-entry</validate>
+							<depends><mode><value>1</value></mode></depends>
+                        </getepay_mid>
+						<test_getepay_mid translate="label">
+                            <label>Test GetePay MID</label>
+							<comment>Type the "Test Getepay MID" allocated to you by Getepay</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>55</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<validate>required-entry</validate>
+							<depends><mode><value>0</value></mode></depends>
+                        </test_getepay_mid>
+                        <terminalId translate="label">
+                            <label>Live Terminal Id</label>
+							<comment>Type the "Live Terminal ID" allocated to you by Getepay</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<validate>required-entry</validate>
+							<depends><mode><value>1</value></mode></depends>
+                        </terminalId>
+						<test_terminalId translate="label">
+                            <label>Test Terminal Id</label>
+							<comment>Type the "Test Terminal ID" allocated to you by Getepay</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<validate>required-entry</validate>
+							<depends><mode><value>0</value></mode></depends>
+                        </test_terminalId>
+                        <getepay_key translate="label">
+                            <label>Live Getepay Key</label>
+							<comment>Type the "Live Getepay Key" allocated to you by Getepay</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<validate>required-entry</validate>
+							<depends><mode><value>1</value></mode></depends>
+                        </getepay_key>
+						<test_getepay_key translate="label">
+                            <label>Test Getepay Key</label>
+							<comment>Type the "Test Getepay Key" allocated to you by Getepay</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<validate>required-entry</validate>
+							<depends><mode><value>0</value></mode></depends>
+                        </test_getepay_key>
+                        <getepay_iv translate="label">
+                            <label>Live GetePay IV</label>
+							<comment>Type the "Live Getepay IV" allocated to you by GetePay</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<validate>required-entry</validate>
+							<depends><mode><value>1</value></mode></depends>
+                        </getepay_iv>
+						<test_getepay_iv translate="label">
+                            <label>Test GetePay IV</label>
+							<comment>Type the "Test Getepay IV" allocated to you by GetePay</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<validate>required-entry</validate>
+							<depends><mode><value>0</value></mode></depends>
+                        </test_getepay_iv>
+						<heading_3>
+							<label>Magento Order Settings</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>90</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</heading_3>
+						<order_status>
+							<label>Order Status</label>
+							<comment>Choose the "Order Status" of newly placed Orders</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_order_status</source_model>
+							<sort_order>95</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</order_status>
+						<order_placed_email>
+							<label>Email Upon Order Placement?</label>
+							<comment>Select "Yes" to Notify Users once an Order is Placed</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>100</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</order_placed_email>
+						<order_successful_email>
+							<label>Email Upon Order Completion?</label>
+							<comment>Select "Yes" to Notify Users if an Order is Successfully Paid</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>110</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</order_successful_email>
+
+						<send_invoice_email>
+							<label>Send Invoice upon Order Completion?</label>
+							<comment>Select "Yes" to send an invoice if an Order is Successfully Paid</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>120</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_invoice_email>
+
+						<order_failed_email>
+							<label>Email Upon Order Failure?</label>
+							<comment>Select "Yes" to Notify Users if an Order is not Successfully Paid or is Cancelled</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>130</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</order_failed_email>
+
+						<heading_4>
+							<label>Cron Settings</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>131</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</heading_4>
+						<enable_canclependingorders_cron>
+							<label>Enable Cancle Pending Orders Cron?</label>
+							<comment>Select "Yes" to Enable cron for moving pending orders to Cancel status after below timeout.</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>135</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</enable_canclependingorders_cron>
+						<pending_orders_timeout>
+                        <label>Pending Orders Timeout</label>
+                        <comment>Set timeout in minutes, (default: 2880 minutes). Timeout can be updated between range of 2880 minutes (48 Hrs) to 43200 minutes (30 days). This will enable cron for moving pending orders to Cancel status for given timeout.</comment>
+                        <frontend_type>text</frontend_type>
+                        <depends>
+                          <enable_canclependingorders_cron>1</enable_canclependingorders_cron>
+                        </depends>
+						<sort_order>136</sort_order>
+						<show_in_default>1</show_in_default>
+						<show_in_website>1</show_in_website>
+						<show_in_store>1</show_in_store>
+						<validate>required-entry validate-digits validate-not-negative-number validate-digits-range digits-range-2880-43200</validate>
+                        </pending_orders_timeout>
+
+						<enable_getepay_pendingpayments_cron>
+							<label>Enable Update Orders Cron?</label>
+							<comment>Select "Yes" to Enable cron for moving pending status orders to Processing or Cancel status after payment succes but order status is pending</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>137</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</enable_getepay_pendingpayments_cron>
+						<getepay_payment_requery_url>
+							<label>Live Payment Re-query URL</label>
+							<comment>Enter "Live Payment Re-query Url" allocated to you by GetePay</comment>
+							<frontend_type>text</frontend_type>
+							<depends>
+							<enable_getepay_pendingpayments_cron>1</enable_getepay_pendingpayments_cron>
+							</depends>
+							<sort_order>138</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<validate>required-entry</validate>
+							<depends><mode><value>1</value></mode></depends>
+                        </getepay_payment_requery_url>
+						<test_getepay_payment_requery_url>
+							<label>Test Payment Re-query URL</label>
+							<comment>Enter "Test Payment Re-query Url" allocated to you by GetePay</comment>
+							<frontend_type>text</frontend_type>
+							<depends>
+							<enable_getepay_pendingpayments_cron>1</enable_getepay_pendingpayments_cron>
+							</depends>
+							<sort_order>138</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<validate>required-entry</validate>
+							<depends><mode><value>0</value></mode></depends>
+                        </test_getepay_payment_requery_url>
+
+						<heading_5>
+							<label>Payment Method Settings</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>140</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</heading_5>
+						<sort_order>
+							<label>Sort Order</label>
+							<comment>Type the "Sort Order" of Getepay in relation to other Payment Methods</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>150</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+					</fields>
+				</pay_functions>
+			</groups>
+		</payment>
+	</sections>
+</config>

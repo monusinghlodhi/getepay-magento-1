@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2023 GetePay
+ *
+ * Author: GetePay
+ * 
+ * Released under the GNU General Public License
+ */
+-->
+<config>
+	<modules>
+		<GetePay_Pay>
+			<version>1.0.1</version>
+		</GetePay_Pay>
+	</modules>
+	<global>
+		<models>
+			<pay>
+				<class>GetePay_Pay_Model</class>
+			</pay>
+		</models>
+	</global>
+	<frontend>
+		<routers>
+			<pay>
+				<use>standard</use>
+				<args>
+					<frontName>pay</frontName>
+					<module>GetePay_Pay</module>
+				</args>
+			</pay>
+		</routers>
+	</frontend>
+	<default>
+		<payment>
+			<pay_functions>
+				<active>0</active>
+				<title>Pay with GetePay</title>
+				<order_status>pending</order_status>
+				<order_placed_email>0</order_placed_email>
+				<order_successful_email>1</order_successful_email>
+				<order_failed_email>0</order_failed_email>
+				<model>pay/functions</model>
+			</pay_functions>
+		</payment>
+	</default>
+	<crontab>
+        <jobs>
+            <getepay_payment_pending_check>
+                <schedule>
+                    <cron_expr>*/5 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>pay/observer::checkPendingPayments</model>
+                </run>
+            </getepay_payment_pending_check>
+			<check_canclependingorders_check>
+                <schedule>
+                    <cron_expr>*/10 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>pay/observer::checkCanclePendingOrders</model>
+                </run>
+            </check_canclependingorders_check>
+        </jobs>
+    </crontab>
+</config>

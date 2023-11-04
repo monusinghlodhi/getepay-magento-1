@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (c) 2023 GetePay
+ *
+ * Author: GetePay
+ * 
+ * Released under the GNU General Public License
+ */
+-->
+<config>
+	<modules>
+		<GetePay_Pay>
+			<active>true</active>
+			<codePool>local</codePool>
+			<depends>
+				<Mage_Payment />
+			</depends>
+			<version>1.0.1</version>
+		</GetePay_Pay>
+	</modules>
+</config>
